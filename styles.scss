@@ -1,0 +1,109 @@
+@import url("./scss/fonts.scss");
+
+$colorParagraph: #7b7b7b;
+$colorTitle: #373737;
+$colorSpan: #ff5300;
+$colorBlock: #fff;
+
+.section__feedback {
+  background: #fff7f4;
+  padding: 60px 0;
+  position: relative;
+}
+
+.feedback {
+  &__title {
+    text-align: center;
+    padding-bottom: 60px;
+    p {
+      font-family: "Work Sans Regular";
+      font-size: 16px;
+      line-height: 150.6%;
+      color: $colorParagraph;
+      padding-bottom: 25px;
+    }
+    h4 {
+      font-family: "Work Sans Semibold";
+      font-size: 39.06px;
+      line-height: 123.6%;
+      color: $colorTitle;
+    }
+    span {
+      color: $colorSpan;
+    }
+  }
+  &__blocks {
+    padding-left: 40px;
+    padding-bottom: 50px;
+    display: flex;
+    gap: 190px;
+  }
+  &__block {
+    padding: 35px 35px 25px 65px;
+    background: $colorSpan;
+    position: relative;
+    p {
+      font-family: "Work Sans Regular";
+      font-size: 16px;
+      line-height: 150.6%;
+      color: $colorBlock;
+    }
+    &--photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, 25px);
+    }
+    &--person {
+      padding-bottom: 20px;
+      h5 {
+        padding-bottom: 10px;
+        font-family: "Work Sans Medium";
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 123.6%;
+        color: $colorBlock;
+      }
+    }
+  }
+  &__elements {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    &--scroll:nth-child(1) {
+      background: $colorSpan;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+    }
+    &--scroll:nth-child(2) {
+      background: $colorTitle;
+      width: 50px;
+      height: 15px;
+      border-radius: 7.5px;
+    }
+    &--scroll:nth-child(3) {
+      background: $colorParagraph;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.section__blog {
+  padding-top: 60px;
+}
+
+.blog {
+  &__title {
+    padding-top: 60px;
+  }
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+    &--about {
+      display: flex;
+    }
+  }
+}
