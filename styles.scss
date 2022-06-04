@@ -1,4 +1,5 @@
 @import url("./scss/fonts.scss");
+@import url("/scss/footer.scss");
 
 $colorParagraph: #7b7b7b;
 $colorTitle: #373737;
@@ -177,12 +178,16 @@ $colorBlock: #fff;
     display: flex;
     gap: 30px;
     padding-bottom: 60px;
+    justify-content: space-between;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
   }
   &__block {
     display: flex;
     flex-direction: column;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-    padding: 18px 85px 25px 18px;
+    padding: 18px 18px 25px 18px;
     flex: 1;
     &--title {
       display: flex;
@@ -202,6 +207,9 @@ $colorBlock: #fff;
         line-height: 123.6%;
         color: $colorTitle;
       }
+      @media (max-width: 1024px) {
+        justify-content: center;
+      }
     }
     &--title > div:first-child {
       background: $colorSpan;
@@ -219,20 +227,35 @@ $colorBlock: #fff;
         line-height: 123.6%;
         color: $colorParagraph;
       }
+
+      span {
+        color: $colorSpan;
+      }
+      @media (max-width: 1024px) {
+        text-align: center;
+      }
     }
   }
   &__form {
     display: flex;
 
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     img {
       max-width: 100%;
       height: auto;
-      position: absolute;
-      top: 20%;
+      padding-top: 100px;
+
+      @media (max-width: 1024px) {
+        padding-top: 0;
+      }
     }
 
     &--main {
-      width: 55%;
+      flex: 0 1 60%;
 
       h3 {
         font-family: "Work Sans Semibold";
@@ -241,6 +264,10 @@ $colorBlock: #fff;
         line-height: 123.6%;
         color: $colorTitle;
         padding-bottom: 18px;
+
+        @media (max-width: 1024px) {
+          text-align: center;
+        }
       }
 
       span {
@@ -249,8 +276,7 @@ $colorBlock: #fff;
     }
 
     &--image {
-      width: 45%;
-      position: relative;
+      flex: 0 1 40%;
     }
 
     &--general {
@@ -282,9 +308,81 @@ $colorBlock: #fff;
 
 .section__location {
   padding-bottom: 120px;
+
+  iframe {
+    max-width: 1170px;
+    max-height: 450px;
+    flex: 1;
+  }
 }
 
 .label {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding-bottom: 120px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.footer {
+  &__bg {
+    &--first {
+      background-color: $colorTitle;
+    }
+    &--second {
+      background-color: $colorSpan;
+    }
+  }
+
+  &__blocks {
+    display: flex;
+    padding-top: 65px;
+    padding-bottom: 70px;
+    p,
+    li,
+    a {
+      font-family: "Work Sans Regular";
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150.6%;
+      color: $colorBlock;
+    }
+    h2 {
+      font-family: "Work Sans Semibold";
+      font-weight: 600;
+      font-size: 39.06px;
+      line-height: 123.6%;
+      color: $colorBlock;
+      padding-bottom: 25px;
+    }
+    &--item {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      nav,
+      ul,
+      li {
+        display: block;
+        padding-bottom: 10px;
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 18px;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      padding: 10px 8px;
+    }
+  }
 }
