@@ -285,8 +285,6 @@ button:hover {
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Правильно ли здесь задать width height? Мне кажется так проще, т.к. не нужно задавать каждому отдельному элементу разные паддинги */
-
 .about__skills--img {
   display: flex;
   background: #7b7b7b;
@@ -418,10 +416,6 @@ button:hover {
   width: 54%;
   gap: 30px;
 }
-
-/* .expereince__success > div:first-child {
-  margin-top: -45px;
-} */
 
 .expereince__success--item {
   display: flex;
@@ -560,12 +554,8 @@ button:hover {
   align-items: center;
   position: relative;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
-
-/* .team__about--block img {
-    max-width: 100%;
-  height: auto;
-} */
 
 .team__about--block h4 {
   font-family: "Work Sans Medium";
@@ -595,14 +585,20 @@ button:hover {
 
 .team__social {
   position: absolute;
-  right: 0;
+  right: -20%;
   top: 10%;
-  display: none;
+  transition: all 0.3s ease;
 }
 
 .team__about--block:hover .team__social {
   display: flex;
   gap: 5px;
+  right: 0;
+}
+
+.team__about--block:hover img {
+  filter: brightness(40%);
+  transition: all 0.3s ease;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -660,8 +656,14 @@ button:hover {
   display: flex;
   max-width: 100%;
   flex: 1;
-  flex-wrap: wrap;
 }
+
+@media (max-width: 1024px) {
+  .project__items {
+    flex-wrap: wrap;
+  }
+}
+
 .project__title--nav {
   padding-top: 25px;
   display: flex;
@@ -690,6 +692,61 @@ button:hover {
   flex-direction: column;
   flex: 1;
 }
+
+.project__item--image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project__item--image--action {
+  position: absolute;
+  bottom: 2.9375rem;
+  left: 50%;
+  transform: translateX(-150%);
+  text-align: center;
+  width: 100%;
+  transition: all 0.3s ease 0s;
+}
+
+.project__item--image::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(255, 83, 0, 0.9);
+  transition: all 0.3s ease 0s;
+}
+
+.project__item--image:hover::after {
+  opacity: 1;
+}
+
+.project__item--image:hover .project__item--image--action {
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.project__item--image--action h4 {
+  font-family: "Work Sans Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 123.6%;
+  color: #ffffff;
+}
+
+.project__item--image--action p {
+  font-family: "Work Sans Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150.6%;
+  color: #ffffff;
+}
+
 /* .section__feedback {
   background: #fff7f4;
   padding: 60px 0;
